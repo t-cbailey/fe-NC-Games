@@ -7,9 +7,10 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Reviews from "./components/Reviews";
-
+import ExpandedReview from "./components/ExpandedReview";
 function App() {
   const [allReviews, SetAllReviews] = useState([]);
+  const [currReviewId, SetCurrReviewId] = useState("");
 
   return (
     <>
@@ -20,7 +21,21 @@ function App() {
         <Route
           path="/reviews"
           element={
-            <Reviews SetAllReviews={SetAllReviews} allReviews={allReviews} />
+            <Reviews
+              SetAllReviews={SetAllReviews}
+              allReviews={allReviews}
+              SetCurrReviewId={SetCurrReviewId}
+              currReviewId={currReviewId}
+            />
+          }
+        />
+        <Route
+          path="/reviews/:review_id"
+          element={
+            <ExpandedReview
+              currReviewId={currReviewId}
+              SetCurrReviewId={SetCurrReviewId}
+            />
           }
         />
       </Routes>
