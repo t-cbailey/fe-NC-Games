@@ -2,7 +2,9 @@ import { fetchReviews } from "../../../Utils/fetchUtils";
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 
-function Reviews({ SetAllReviews, allReviews }) {
+function Reviews() {
+  const [allReviews, SetAllReviews] = useState([]);
+
   useEffect(() => {
     fetchReviews().then(({ reviews }) => {
       SetAllReviews(reviews);
