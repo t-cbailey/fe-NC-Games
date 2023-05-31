@@ -2,16 +2,18 @@
 :root {
   display: block;
 text-align: center;
-background-color: rgb(73, 73, 73);
+background-color: rgb(42, 42, 46);
 color: white
 }
 
 .loading{
  
   font-size: 1.5em;
-
+  
 }
 
+
+/* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
 
 header {
@@ -58,17 +60,40 @@ a:visited {
 
   margin: 1em 1em 1em 1em;
   list-style: none;
-  border: 2px grey solid;
   font-size: .8em;
   max-width: 20vw;
+  background-color: rgb(32, 54, 54);
+  color: white;
+  border-radius: 20px;
+  padding: 0px;
+  box-shadow: 2px 2px rgb(19, 19, 19);
+  border: 3px rgb(26, 26, 26) solid;
+  cursor: pointer;
+  
+  
 
 }
 
-.reviewListImage{
+.reviewCardImage{
   max-width: 100%;
+  border-radius: 18px;
 }
+.expandedReview{
+  max-width: 80vw;
+  margin: 0px 10vw 0px 10vw;
+
 }
 
+#expandedReviewImg{
+  max-width: 70vw;
+  border-radius: 20px;
+  margin: 2em 0em 2em 0em;
+}
+
+
+}
+
+/* MOBILE FORMATTING */
 @media only screen and (max-width: 768px) {
 
  
@@ -116,14 +141,37 @@ a:visited {
 
   margin: 1em 1em 1em 1em;
   list-style: none;
-  border: 2px grey solid;
+  border: 3px rgb(26, 26, 26) solid;
   font-size: .8em;
-  max-width: 100%
+  max-width: 100%;
+  background-color: rgb(32, 54, 54);
+  color: white;
+  border-radius: 20px;
+  padding: 0px;
+  box-shadow: 2px 2px rgb(19, 19, 19);
+  cursor: pointer;
+}
+
+.reviewCardText{
+  padding: 5px;
+}
+
+.reviewCardImage{
+  max-width: 100%;
+  border-radius: 18px;
+  
+}
+
+.expandedReview{
+  max-width: 80vw;
+  margin: 0px 10vw 0px 10vw;
 
 }
 
-.reviewListImage{
-  max-width: 100%;
+#expandedReviewImg{
+  max-width: 70vw;
+  border-radius: 20px;
+  margin: 2em 0em 2em 0em;
 }
 
 }
