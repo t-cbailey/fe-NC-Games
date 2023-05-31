@@ -8,7 +8,7 @@ function UserCard({ user }) {
 
   function handleClick(event) {
     event.preventDefault();
-    setUser({ username: event.target.id, avatar_url: event.target.src });
+    setUser({ username: event.target.name, avatar_url: event.target.src });
   }
 
   const handleKeypress = (event) => {
@@ -19,23 +19,23 @@ function UserCard({ user }) {
 
   return (
     <>
-      <button
-        onClick={handleClick}
-        onKeyDown={handleKeypress}
-        type="button"
-        className="userCard"
-        name={user.username}
-      >
-        <img
-          src={user.avatar_url}
-          alt={user.username}
-          className="userCardImage"
-          name={user.username}
-        />
-        <section className="userCardText">
-          <li>{user.username}</li>
-        </section>
-      </button>
+      <section name={user.username}>
+        <button
+          onClick={handleClick}
+          onKeyDown={handleKeypress}
+          type="button"
+          className="userCard"
+        >
+          <img
+            src={user.avatar_url}
+            alt={user.username}
+            className="userCardImage"
+          />
+          <section className="userCardText">
+            <li>{user.username}</li>
+          </section>
+        </button>
+      </section>
     </>
   );
 }
