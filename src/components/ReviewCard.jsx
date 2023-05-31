@@ -8,18 +8,32 @@ function ReviewCard({ review }) {
     navigate(`/reviews/${event.target.name}`);
   }
 
+  const handleKeypress = (event) => {
+    if (event.keyCode === 13) {
+      handleClick(event);
+    }
+  };
+
   return (
     <>
-      <button onClick={handleClick} type="button" className="reviewCard">
+      <button
+        onClick={handleClick}
+        onKeyDown={handleKeypress}
+        type="button"
+        className="reviewCard"
+        name={review.review_id}
+      >
         <img
           src={review.review_img_url}
           alt={review.name}
-          className="reviewListImage"
+          className="reviewCardImage"
           name={review.review_id}
         />
-        <li>{review.title}</li>
-        <li>Votes: {review.votes}</li>
-        <li>Comments:{review.comment_count}</li>
+        <section className="reviewCardText">
+          <li>{review.title}</li>
+          <li>Votes: {review.votes}</li>
+          <li>Comments:{review.comment_count}</li>
+        </section>
       </button>
     </>
   );
