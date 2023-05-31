@@ -8,10 +8,11 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Reviews from "./components/Reviews/Reviews";
 import UserPage from "./components/Users/UserPage";
+import ExpandedReview from "./components/Reviews/ExpandedReview";
+
 import { UserContext } from "../Utils/UserContext";
 
 function App() {
-  const [allReviews, SetAllReviews] = useState([]);
   const [user, setUser] = useState({
     username: "guest",
     avatar_url:
@@ -25,12 +26,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/reviews"
-            element={
-              <Reviews SetAllReviews={SetAllReviews} allReviews={allReviews} />
-            }
-          />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/reviews/:review_id" element={<ExpandedReview />} />
           <Route path="/users" element={<UserPage />} />
         </Routes>
         <Footer />

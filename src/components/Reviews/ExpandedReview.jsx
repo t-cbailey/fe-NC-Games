@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchReviewsById } from "../../Utils/fetchUtils";
+import { fetchReviewsById } from "../../../Utils/fetchUtils";
 import { useParams } from "react-router-dom";
 
 function ExpandedReview() {

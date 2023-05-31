@@ -12,15 +12,12 @@ color: white
   
 }
 
-
-#headerAvatar{
-  max-width: 50px;
+.headerAvatar{
+  max-width: 20px;
 }
 
 
-
 /* DESKTOP FORMATTING */
-
 @media only screen and (min-width: 768px) {
 
 header {
@@ -133,7 +130,7 @@ a:visited {
   color: white;
 }
 
-.reviewList, .userList {
+.reviewList{
     
   max-width: 80vw;
   display: flex;
@@ -144,7 +141,7 @@ a:visited {
   padding: 1em;
 }
 
-.reviewCard , .userCard{
+.reviewCard, .userCard{
 
   margin: 1em 1em 1em 1em;
   list-style: none;
@@ -157,13 +154,14 @@ a:visited {
   padding: 0px;
   box-shadow: 2px 2px rgb(19, 19, 19);
   cursor: pointer;
+  
 }
 
-.reviewCardText{
+.reviewCardText, .userCardText{
   padding: 5px;
 }
 
-.reviewCardImage{
+.reviewCardImage, .userCardImage{
   max-width: 100%;
   border-radius: 18px;
   
@@ -180,6 +178,5 @@ a:visited {
   border-radius: 20px;
   margin: 2em 0em 2em 0em;
 }
-
 
 }
