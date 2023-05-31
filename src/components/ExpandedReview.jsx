@@ -15,7 +15,7 @@ function ExpandedReview() {
   }, []);
 
   return isLoading ? (
-    <p className="loading">loading...</p>
+    <p className="loading">Loading...</p>
   ) : (
     <>
       <section className="expandedReview">
