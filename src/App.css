@@ -13,7 +13,11 @@ color: white
 }
 
 .headerAvatar{
-  max-width: 20px;
+  max-width: 5vw;
+}
+
+.selectedUser{
+  max-height: 30px;
 }
 
 
