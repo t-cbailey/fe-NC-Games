@@ -12,16 +12,19 @@ function CommentsList({ review_id }) {
       setIsLoading(false);
     });
   }, []);
-
+  console.log(comments);
   return (
     <>
       <h3>Comments</h3>
-
-      <ul className="commentsList">
-        {comments.map((comment) => {
-          return <CommentCard key={comment.comment_id} comment={comment} />;
-        })}
-      </ul>
+      {comments.length < 1 ? (
+        <p>No Comments...</p>
+      ) : (
+        <ul className="commentsList">
+          {comments.map((comment) => {
+            return <CommentCard key={comment.comment_id} comment={comment} />;
+          })}
+        </ul>
+      )}
     </>
   );
 }
