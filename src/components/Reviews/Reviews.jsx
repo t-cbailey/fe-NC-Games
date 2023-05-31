@@ -1,4 +1,4 @@
-import { fetchReviews } from "../../Utils/fetchUtils";
+import { fetchReviews } from "../../../Utils/fetchUtils";
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 

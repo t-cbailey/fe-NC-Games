@@ -13,3 +13,13 @@ export const fetchReviews = () => {
       console.log(err);
     });
 };
+
+export const fetchUsers = () => {
+  return NcGamesAPI.get("/api/users")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

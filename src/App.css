@@ -12,6 +12,10 @@ color: white
 
 }
 
+#headerAvatar{
+  max-width: 50px;
+}
+
 @media only screen and (min-width: 768px) {
 
 header {
@@ -101,7 +105,7 @@ a:visited {
   color: white;
 }
 
-.reviewList{
+.reviewList, .userList {
     
   max-width: 80vw;
   display: flex;
@@ -112,7 +116,7 @@ a:visited {
   padding: 1em;
 }
 
-.reviewCard{
+.reviewCard , .userCard{
 
   margin: 1em 1em 1em 1em;
   list-style: none;
@@ -122,8 +126,9 @@ a:visited {
 
 }
 
-.reviewListImage{
+.reviewListImage, .userListImage{
   max-width: 100%;
 }
+
 
 }
