@@ -14,8 +14,19 @@ export const fetchReviews = () => {
     });
 };
 
+export const fetchUsers = () => {
+  return NcGamesAPI.get("/api/users")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 export const fetchReviewsById = (review_id) => {
   return NcGamesAPI.get(`/api/reviews/${review_id}`)
+
     .then((res) => {
       return res.data;
     })
