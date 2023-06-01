@@ -98,6 +98,37 @@ a:visited {
   margin: 2em 0em 2em 0em;
 }
 
+.commentsList{
+   max-width: 90vw;
+  margin: 0em 5vw 2em 5vw;
+  padding: 1em;
+
+
+}
+
+.commentCard{
+
+  margin: 1em 1em 1em 1em;
+  list-style: none;
+  border: 3px rgb(26, 26, 26) solid;
+  font-size: .8em;
+  max-width: 100%;
+  background-color: rgb(32, 54, 54);
+  color: white;
+  border-radius: 20px;
+  padding: 0px;
+  box-shadow: 2px 2px rgb(19, 19, 19);
+  
+}
+
+.commentCardText{
+padding: .5em;
+}
+
+.commentsSection{
+  background-color: rgb(78, 74, 68);
+  border: 2px solid black;
+}
 
 }
 
@@ -183,4 +214,35 @@ a:visited {
   margin: 2em 0em 2em 0em;
 }
 
+.commentsList{
+   max-width: 90vw;
+ margin: 0em 5vw 2em 5vw;
+  padding: 1em;
+
+
+}
+
+.commentCard{
+
+  margin: 1em 1em 1em 1em;
+  list-style: none;
+  border: 3px rgb(26, 26, 26) solid;
+  font-size: .8em;
+  max-width: 100%;
+  background-color: rgb(32, 54, 54);
+  color: white;
+  border-radius: 20px;
+  padding: 0px;
+  box-shadow: 2px 2px rgb(19, 19, 19);
+  
+}
+
+.commentCardText{
+padding: .5em;
+}
+
+.commentsSection{
+  background-color: rgb(78, 74, 68);
+  border: 2px solid black;
+}
 }

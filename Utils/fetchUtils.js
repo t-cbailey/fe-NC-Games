@@ -34,3 +34,14 @@ export const fetchReviewsById = (review_id) => {
       console.log(err);
     });
 };
+
+export const fetchCommentsByReviewId = (review_id) => {
+  return NcGamesAPI.get(`/api/reviews/${review_id}/comments`)
+
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

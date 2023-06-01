@@ -5,7 +5,6 @@ function ReviewCard({ review }) {
 
   function handleClick(event) {
     event.preventDefault();
-    console.log(event.target.name);
     navigate(`/reviews/${event.target.name}`);
   }
 

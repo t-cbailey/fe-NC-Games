@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchReviewsById } from "../../../Utils/fetchUtils";
 import { useParams } from "react-router-dom";
+import CommentsList from "../Comments/CommentsList";
 
 function ExpandedReview() {
   const [currReview, setCurrReview] = useState([]);
@@ -28,6 +29,9 @@ function ExpandedReview() {
         <article>{currReview[0].review_body}</article>
         <p>Reviewed by {currReview[0].owner}</p>
         <p>Votes {currReview[0].votes}</p>
+      </section>
+      <section className="commentsSection">
+        <CommentsList review_id={currReview[0].review_id} />
       </section>
     </>
   );
