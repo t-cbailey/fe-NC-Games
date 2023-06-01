@@ -45,18 +45,21 @@ function PostNewComment({ review_id, SetComments }) {
 
 
     return <>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="commentBody">comment input</label>
+        <form className='commentForm' onSubmit={handleSubmit}>
+
             <input
+
                 id="commentBody"
                 type="text"
                 required
                 name="commentBody"
                 onChange={handleInputChange}
                 value={commentBody}
+                className="commentInputBody"
+                placeholder="write a comment..."
 
             ></input>
-            <button>Submit</button>
+            <button className="commentSubmit">Submit</button>
             {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}
         </form>
     </>
