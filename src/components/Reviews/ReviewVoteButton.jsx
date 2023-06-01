@@ -32,11 +32,11 @@ function ReviewVoteButton({ currReview }) {
     return (
         <>
             <p>Votes {votes}</p>
-            <div>
-                <button name="upVote" onClick={handleClick} disabled={upDisabled}>
+            <div className="voteButtonContainer">
+                <button className="voteButtons" name="upVote" onClick={handleClick} disabled={upDisabled}>
                     UpVote
                 </button>
-                <button name="downVote" onClick={handleClick} disabled={downDisabled}>
+                <button className="voteButtons" name="downVote" onClick={handleClick} disabled={downDisabled}>
                     DownVote
                 </button>
                 {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}

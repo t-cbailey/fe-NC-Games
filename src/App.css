@@ -249,4 +249,12 @@ padding: .5em;
 .errormsg{
   color:rgb(232, 100, 100)
 }
+
+.voteButtonContainer{
+  margin: 1em 0em 3em 0em
+}
+
+.voteButtons{
+  
+}
 }
