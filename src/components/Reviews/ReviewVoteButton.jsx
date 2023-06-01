@@ -7,6 +7,7 @@ function ReviewVoteButton({ currReview }) {
     //add user specific disables in BE!
     const [upDisabled, SetUpDisabled] = useState(false)
     const [downDisabled, SetDownDisabled] = useState(false)
+    const [isError, SetIsError] = useState()
 
     const inc = { inc_votes: 1 }
 
@@ -25,7 +26,7 @@ function ReviewVoteButton({ currReview }) {
 
 
 
-        incrementVotes(currReview[0].review_id, inc);
+        incrementVotes(currReview[0].review_id, inc, SetIsError);
     }
 
     return (
@@ -38,6 +39,7 @@ function ReviewVoteButton({ currReview }) {
                 <button name="downVote" onClick={handleClick} disabled={downDisabled}>
                     DownVote
                 </button>
+                {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}
             </div>
         </>
     );
