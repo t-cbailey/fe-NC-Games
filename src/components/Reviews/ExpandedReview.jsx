@@ -7,6 +7,7 @@ import ReviewVoteButton from "./ReviewVoteButton";
 function ExpandedReview() {
   const [currReview, setCurrReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const { review_id } = useParams();
 
   useEffect(() => {

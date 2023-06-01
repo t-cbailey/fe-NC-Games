@@ -9,6 +9,7 @@ function ReviewVoteButton({ currReview }) {
     const [downDisabled, SetDownDisabled] = useState(false)
     const [isError, SetIsError] = useState()
 
+
     const inc = { inc_votes: 1 }
 
     function handleClick(event) {
@@ -26,7 +27,9 @@ function ReviewVoteButton({ currReview }) {
 
 
 
-        incrementVotes(currReview[0].review_id, inc, SetIsError);
+        incrementVotes(currReview[0].review_id, inc, SetIsError).catch((err) => {
+            SetIsError(true);
+        });;
     }
 
     return (
