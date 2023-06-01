@@ -6,6 +6,8 @@ function UserCard({ user }) {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+
+
   function handleClick(event) {
     event.preventDefault();
     setUser({ username: event.target.name, avatar_url: event.target.src });
@@ -25,14 +27,16 @@ function UserCard({ user }) {
           onKeyDown={handleKeypress}
           type="button"
           className="userCard"
+          name={user.username}
         >
           <img
             src={user.avatar_url}
             alt={user.username}
             className="userCardImage"
+            name={user.username}
           />
           <section className="userCardText">
-            <li>{user.username}</li>
+            <li name={user.username}>{user.username}</li>
           </section>
         </button>
       </section>

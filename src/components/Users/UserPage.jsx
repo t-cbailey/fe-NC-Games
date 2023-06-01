@@ -10,6 +10,7 @@ function UserPage() {
   useEffect(() => {
     fetchUsers().then(({ users }) => {
       setAllUsers(users);
+
     });
   }, []);
 

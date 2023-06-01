@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { fetchCommentsByReviewId } from "../../../Utils/fetchUtils";
 import CommentCard from "./CommentCard";
+import PostNewComment from "../Comments/PostNewComment";
 
 function CommentsList({ review_id }) {
   const [comments, SetComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+
+
+
+
 
   useEffect(() => {
     fetchCommentsByReviewId(review_id).then(({ comments }) => {
@@ -12,7 +18,7 @@ function CommentsList({ review_id }) {
       setIsLoading(false);
     });
   }, []);
-  console.log(comments);
+
   return (
     <>
       <h3>Comments</h3>
@@ -25,6 +31,9 @@ function CommentsList({ review_id }) {
           })}
         </ul>
       )}
+      <section className="addComment">
+        <PostNewComment review_id={review_id} SetComments={SetComments} />
+      </section>
     </>
   );
 }
