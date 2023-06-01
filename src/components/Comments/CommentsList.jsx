@@ -12,7 +12,7 @@ function CommentsList({ review_id }) {
       setIsLoading(false);
     });
   }, []);
-  console.log(comments);
+
   return (
     <>
       <h3>Comments</h3>

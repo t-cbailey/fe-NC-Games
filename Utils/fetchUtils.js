@@ -5,7 +5,7 @@ const NcGamesAPI = axios.create({
 });
 
 export const fetchReviews = () => {
-  return NcGamesAPI.get(`/api/reviews`)
+  return NcGamesAPI.get(`/api/reviews?sort_by=votes&order_by=desc`)
     .then((res) => {
       return res.data;
     })
@@ -40,6 +40,16 @@ export const fetchCommentsByReviewId = (review_id) => {
 
     .then((res) => {
       return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const incrementVotes = (review_id, votesData) => {
+  return NcGamesAPI.patch(`/api/reviews/${review_id}`, votesData)
+    .then((res) => {
+      res.data;
     })
     .catch((err) => {
       console.log(err);
