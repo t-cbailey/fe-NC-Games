@@ -45,3 +45,13 @@ export const fetchCommentsByReviewId = (review_id) => {
       console.log(err);
     });
 };
+
+export const postCommentByReviewId = (review) => {
+  return NcGamesAPI.post(`/api/reviews/${review_id}/comments`, review)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
