@@ -12,6 +12,8 @@ function Reviews() {
     });
   }, []);
 
+
+
   const [isLoading, setIsLoading] = useState(true);
 
   return (
