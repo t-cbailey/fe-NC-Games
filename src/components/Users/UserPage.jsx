@@ -17,6 +17,7 @@ function UserPage() {
   return (
     <>
       <h2>User page</h2>
+      <p>click on a user to sign in</p>
       <ul className="userList">
         {allUsers.map((user) => {
           return <UserCard key={user.username} user={user} />;

@@ -7,10 +7,11 @@ import { postCommentByReviewId } from "../../../Utils/fetchUtils";
 
 function PostNewComment({ review_id, SetComments }) {
     const { user, setUser } = useContext(UserContext);
-    const [commentBody, SetCommentBody] = useState('')
+    const [commentBody, setCommentBody] = useState('')
+    const [isError, setIsError] = useState()
 
     const handleInputChange = (event) => {
-        SetCommentBody(event.target.value)
+        setCommentBody(event.target.value)
 
     }
 
@@ -19,21 +20,28 @@ function PostNewComment({ review_id, SetComments }) {
 
         event.preventDefault()
         const newComment = {
-            username: user.username,
-            body: commentBody
+
+            author: user.username,
+            body: commentBody,
+
         }
-        postCommentByReviewId(review_id, newComment).then((newCommFromApi) => {
-            const response = newCommFromApi.request.response
-            console.log(response)
 
+        SetComments((currList) => [newComment, ...currList])
+        postCommentByReviewId(review_id, newComment, setIsError).catch((err) => {
+            setCommentBody('')
+            setIsError(true)
+            SetComments((currList) => {
+                currList.shift();
 
-
-            SetComments((currComments) => { console.log(currComments);[newCommFromApi.request.response, ...currComments] })
+                return [...currList]
+            })
         })
 
-
-
     }
+
+
+
+
 
 
     return <>
@@ -45,9 +53,11 @@ function PostNewComment({ review_id, SetComments }) {
                 required
                 name="commentBody"
                 onChange={handleInputChange}
+                value={commentBody}
 
             ></input>
             <button>Submit</button>
+            {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}
         </form>
     </>
 }
