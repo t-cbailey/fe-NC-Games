@@ -147,7 +147,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 10px 30vw 2px 30vw}
+  margin: 10px 15vw 2px 15vw}
 
 .welcomeText {
   font-size: 5em;
@@ -277,7 +277,22 @@ padding: .5em;
 
 }
 
-#categoryDropdown{
-  margin: 1em
+#categoryDropdown, #OrderByDropdown, #SortByDropdown{
+  background-color: rgb(176, 184, 184);
+  font-size: .8em;
+  margin: .2em
+}
+
+
+
+
+.filtersContainer{
+  max-width: 90vw;
+  margin: 1em 5vw 1em 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  
 }
 }
