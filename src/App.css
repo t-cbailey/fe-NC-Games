@@ -257,4 +257,8 @@ padding: .5em;
 .voteButtons{
   
 }
+
+#categoryDropdown{
+  margin: 1em
+}
 }

@@ -11,11 +11,13 @@ function ExpandedReview() {
   const { review_id } = useParams();
 
   useEffect(() => {
-    fetchReviewsById(review_id).then(({ review }) => {
-      setCurrReview(review);
-      setIsLoading(false);
-    });
-  }, []);
+    if (review_id) {
+      fetchReviewsById(review_id).then(({ review }) => {
+        setCurrReview(review);
+        setIsLoading(false);
+      })
+    };
+  }, [review_id]);
 
   return isLoading ? (
     <p className="loading">Loading...</p>

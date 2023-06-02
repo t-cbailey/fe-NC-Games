@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../../../Utils/fetchUtils";
-import { useNavigate } from "react-router-dom";
+
 
 
 function CategoryDropdown({ SetCategoryName, SetCategories, categories, categoryName }) {
-    const navigate = useNavigate()
 
-    const handleClick = (event) => {
-        SetCategoryName(event.target.value);
-        navigate(`/reviews/categories/${categoryName}`);
+
+    const handleChange = (event) => {
+        event.target.value === 'select a category' ? SetCategoryName('') :
+            SetCategoryName(event.target.value);
+    }
+
+    const handleClick = () => {
+        SetCategoryName('')
 
     }
 
+
     return (
-        <form>
-            <label htmlFor="categoryDropdown">Choose a category here</label>
-            <select onChange={handleClick} id="categoryDropdown">
+        <form >
+
+            <select onChange={handleChange} id="categoryDropdown">
                 {categories.map((category) => {
                     return (
                         <option key={category} value={category}>
@@ -24,6 +29,7 @@ function CategoryDropdown({ SetCategoryName, SetCategories, categories, category
                     );
                 })}
             </select>
+            <button onClick={handleClick} type="reset">reset</button>
         </form>
     );
 }

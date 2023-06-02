@@ -2,7 +2,7 @@ import { fetchReviews, fetchCategories } from "../../../Utils/fetchUtils";
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import Filters from "./Filters/Filters";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 
 
@@ -13,20 +13,20 @@ function Reviews() {
   const { category } = useParams();
 
 
-
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchCategories()
       .then(({ categories }) => {
         return categories.map((category) => {
-
           return category.slug;
         });
       })
       .then((categories) => {
-        SetCategories(categories);
 
-        categories.indexOf(category) >= 0 ? SetCategoryName(category) : null
+        SetCategories(["select a category", ...categories]);
+
+        categories.indexOf(category) >= 0 ? SetCategoryName(category) : SetCategoryName('')
       });
   }, []);
 
@@ -40,7 +40,12 @@ function Reviews() {
     fetchReviews(categoryName).then(({ reviews }) => {
       SetAllReviews(reviews);
       setIsLoading(false);
-    });
+    }).then(() => {
+      if (categoryName) {
+        navigate(`/reviews/categories/${categoryName}`);
+      }
+    }
+    );
   }, [categoryName]);
 
 
@@ -53,7 +58,7 @@ function Reviews() {
   return (
     <>
       <Filters SetCategoryName={SetCategoryName} SetCategories={SetCategories} categories={categories} categoryName={categoryName} />
-      <h2>{category} reviews</h2>
+      <h2>{categoryName ? categoryName : 'All'} reviews</h2>
       <ul className="reviewList">
         {isLoading ? (
           <p className="loading">loading...</p>
