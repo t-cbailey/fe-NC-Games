@@ -31,6 +31,7 @@ function ReviewCard({ review }) {
         />
         <section className="reviewCardText">
           <li>{review.title}</li>
+          <li>Category: {review.category}</li>
           <li>Votes: {review.votes}</li>
           <li>Comments:{review.comment_count}</li>
         </section>

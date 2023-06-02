@@ -12,11 +12,13 @@ function ExpandedReview() {
   const { review_id } = useParams();
 
   useEffect(() => {
-    fetchReviewsById(review_id).then(({ review }) => {
-      setCurrReview(review);
-      setIsLoading(false);
-    });
-  }, []);
+    if (review_id) {
+      fetchReviewsById(review_id).then(({ review }) => {
+        setCurrReview(review);
+        setIsLoading(false);
+      })
+    };
+  }, [review_id]);
 
   return isLoading ? (
     <p className="loading">Loading...</p>
@@ -30,6 +32,7 @@ function ExpandedReview() {
         />
         <h3>{currReview[0].title}</h3>
         <article>{currReview[0].review_body}</article>
+        <p>Category: {currReview[0].category} </p>
         <p>Reviewed by {currReview[0].owner}</p>
         <ReviewVoteButton currReview={currReview} />
       </section>

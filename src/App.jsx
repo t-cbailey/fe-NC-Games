@@ -29,6 +29,7 @@ function App() {
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/reviews/:review_id" element={<ExpandedReview />} />
           <Route path="/users" element={<UserPage />} />
+          <Route path='/reviews/categories/:category' element={<Reviews />} />
         </Routes>
         <Footer />
       </UserContext.Provider>
