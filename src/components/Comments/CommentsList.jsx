@@ -6,6 +6,8 @@ import PostNewComment from "../Comments/PostNewComment";
 function CommentsList({ review_id }) {
   const [comments, SetComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currCommentId, SetCurrCommentId] = useState('')
+  const [isDisabled, setIsDisabled] = useState(false)
 
 
 
@@ -20,24 +22,23 @@ function CommentsList({ review_id }) {
   }, []);
 
 
-  if (isLoading === true) {
-    <h3>Comments</h3>
-    return <p className="loading">Loading...</p>
-  } else
-    return (
-      <>
-        <h3>Comments</h3>
-        {comments.length < 1 ? (
-          <p>No Comments...</p>
-        ) : (
-          <ul className="commentsList">
-            {comments.map((comment) => {
-              return <CommentCard key={comment.comment_id} comment={comment} />;
-            })}
-          </ul>
-        )}
-      </>
-    );
+  return (
+    <>
+      <h3>Comments</h3>
+      <section className="addComment">
+        <PostNewComment review_id={review_id} SetComments={SetComments} SetCurrCommentId={SetCurrCommentId} isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
+      </section>
+      {comments.length < 1 ? (
+        <p>No Comments...</p>
+      ) : (
+        <ul className="commentsList">
+          {comments.map((comment) => {
+            return <CommentCard key={comment.comment_id} comment={comment} SetComments={SetComments} currCommentId={currCommentId} setIsDisabled={setIsDisabled} />;
+          })}
+        </ul>
+      )}
+    </>
+  );
 
 }
 
