@@ -19,23 +19,26 @@ function CommentsList({ review_id }) {
     });
   }, []);
 
-  return (
-    <>
-      <h3>Comments</h3>
-      <section className="addComment">
-        <PostNewComment review_id={review_id} SetComments={SetComments} />
-      </section>
-      {comments.length < 1 ? (
-        <p>No Comments...</p>
-      ) : (
-        <ul className="commentsList">
-          {comments.map((comment) => {
-            return <CommentCard key={comment.comment_id} comment={comment} />;
-          })}
-        </ul>
-      )}
-    </>
-  );
+
+  if (isLoading === true) {
+    <h3>Comments</h3>
+    return <p className="loading">Loading...</p>
+  } else
+    return (
+      <>
+        <h3>Comments</h3>
+        {comments.length < 1 ? (
+          <p>No Comments...</p>
+        ) : (
+          <ul className="commentsList">
+            {comments.map((comment) => {
+              return <CommentCard key={comment.comment_id} comment={comment} />;
+            })}
+          </ul>
+        )}
+      </>
+    );
+
 }
 
 export default CommentsList;
