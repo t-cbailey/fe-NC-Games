@@ -4,9 +4,9 @@ const NcGamesAPI = axios.create({
   baseURL: "https://nc-games-796w.onrender.com/",
 });
 
-export const fetchReviews = (category) => {
+export const fetchReviews = (categoryName) => {
   return NcGamesAPI.get(
-    `/api/reviews?sort_by=votes&order_by=desc&category=${category}`
+    `/api/reviews?sort_by=votes&order_by=desc&category=${categoryName}`
   )
     .then((res) => {
       return res.data;
@@ -54,4 +54,14 @@ export const incrementVotes = (review_id, votesData, SetIsError) => {
       res.data;
     }
   );
+};
+
+export const fetchCategories = () => {
+  return NcGamesAPI.get("/api/categories")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };

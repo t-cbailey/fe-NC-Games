@@ -1,9 +1,10 @@
 import CategoryDropdown from "./CategoryDropdown"
 
-function Filters({ SetCategory }) {
+function Filters({ SetCategoryName, SetCategories, categories, categoryName }) {
+    console.log(categoryName)
 
     return <>
-        <CategoryDropdown SetCategory={SetCategory} />
+        <CategoryDropdown SetCategoryName={SetCategoryName} SetCategories={SetCategories} categories={categories} categoryName={categoryName} />
     </>
 
 }

@@ -1,20 +1,50 @@
-import { fetchReviews } from "../../../Utils/fetchUtils";
+import { fetchReviews, fetchCategories } from "../../../Utils/fetchUtils";
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import Filters from "./Filters/Filters";
+import { useParams } from "react-router-dom";
+
 
 
 function Reviews() {
   const [allReviews, SetAllReviews] = useState([]);
-  const [category, SetCategory] = useState('')
-  console.log(category)
+  const [categoryName, SetCategoryName] = useState('')
+  const [categories, SetCategories] = useState([])
+  const { category } = useParams();
+
+
+
 
   useEffect(() => {
-    fetchReviews(category).then(({ reviews }) => {
+    fetchCategories()
+      .then(({ categories }) => {
+        return categories.map((category) => {
+
+          return category.slug;
+        });
+      })
+      .then((categories) => {
+        SetCategories(categories);
+
+        categories.indexOf(category) >= 0 ? SetCategoryName(category) : null
+      });
+  }, []);
+
+
+
+
+
+
+  useEffect(() => {
+
+    fetchReviews(categoryName).then(({ reviews }) => {
       SetAllReviews(reviews);
       setIsLoading(false);
     });
-  }, [category]);
+  }, [categoryName]);
+
+
+
 
 
 
@@ -22,7 +52,7 @@ function Reviews() {
 
   return (
     <>
-      <Filters SetCategory={SetCategory} />
+      <Filters SetCategoryName={SetCategoryName} SetCategories={SetCategories} categories={categories} categoryName={categoryName} />
       <h2>{category} reviews</h2>
       <ul className="reviewList">
         {isLoading ? (
