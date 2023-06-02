@@ -46,17 +46,22 @@ export const fetchCommentsByReviewId = (review_id) => {
     });
 };
 
-
 export const postCommentByReviewId = (review_id, reviewBody) => {
-  return NcGamesAPI.post(`/api/reviews/${review_id}/comments`, reviewBody);
-}
+  return NcGamesAPI.post(`/api/reviews/${review_id}/comments`, reviewBody).then(
+    (res) => {
+      return res.data;
+    }
+  );
+};
 
-
-export const incrementVotes = (review_id, votesData, SetIsError) => {
+export const incrementVotes = (review_id, votesData) => {
   return NcGamesAPI.patch(`/api/reviews/${review_id}`, votesData).then(
     (res) => {
       res.data;
     }
   );
+};
 
+export const deleteCommentById = (id) => {
+  return NcGamesAPI.delete(`/api/comments/${id}`);
 };

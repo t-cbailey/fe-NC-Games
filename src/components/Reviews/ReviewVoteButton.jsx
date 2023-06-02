@@ -37,10 +37,10 @@ function ReviewVoteButton({ currReview }) {
             <p>Votes {votes}</p>
             <div className="voteButtonContainer">
                 <button className="voteButtons" name="upVote" onClick={handleClick} disabled={upDisabled}>
-                    UpVote
+                    👍
                 </button>
                 <button className="voteButtons" name="downVote" onClick={handleClick} disabled={downDisabled}>
-                    DownVote
+                    👎
                 </button>
                 {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}
             </div>
