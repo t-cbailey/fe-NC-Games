@@ -3,18 +3,14 @@ import { fetchCategories } from "../../../../Utils/fetchUtils";
 
 
 
-function CategoryDropdown({ SetCategoryName, SetCategories, categories, categoryName }) {
+function CategoryDropdown({ SetCategoryName, categories }) {
 
 
     const handleChange = (event) => {
-        event.target.value === 'select a category' ? SetCategoryName('') :
+        event.target.value === 'All Categories' ? SetCategoryName('') :
             SetCategoryName(event.target.value);
     }
 
-    const handleClick = () => {
-        SetCategoryName('')
-
-    }
 
 
     return (
@@ -29,7 +25,7 @@ function CategoryDropdown({ SetCategoryName, SetCategories, categories, category
                     );
                 })}
             </select>
-            <button onClick={handleClick} type="reset">reset</button>
+
         </form>
     );
 }

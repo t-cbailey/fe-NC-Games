@@ -8,8 +8,10 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function Reviews() {
   const [allReviews, SetAllReviews] = useState([]);
-  const [categoryName, SetCategoryName] = useState('')
   const [categories, SetCategories] = useState([])
+  const [categoryName, SetCategoryName] = useState(null)
+  const [sortParam, SetSortParam] = useState(null)
+  const [orderParam, SetOrderParam] = useState(null)
   const { category } = useParams();
 
 
@@ -24,41 +26,43 @@ function Reviews() {
       })
       .then((categories) => {
 
-        SetCategories(["select a category", ...categories]);
+        SetCategories(["All Categories", ...categories]);
 
         categories.indexOf(category) >= 0 ? SetCategoryName(category) : SetCategoryName('')
       });
   }, []);
 
 
-
-
-
-
   useEffect(() => {
 
-    fetchReviews(categoryName).then(({ reviews }) => {
+    fetchReviews(categoryName, sortParam, orderParam).then(({ reviews }) => {
       SetAllReviews(reviews);
       setIsLoading(false);
     }).then(() => {
       if (categoryName) {
         navigate(`/reviews/categories/${categoryName}`);
-      }
+      } else { navigate(`/reviews`); }
     }
     );
-  }, [categoryName]);
-
-
-
-
+  }, [categoryName, sortParam, orderParam]);
 
 
   const [isLoading, setIsLoading] = useState(true);
 
+  function capitaliseCategoryName(categoryName) {
+    if (categoryName) {
+      let tempStr = categoryName.slice()
+      return tempStr.charAt(0).toUpperCase() + tempStr.slice(1)
+    }
+  }
+
+
+
+
   return (
     <>
-      <Filters SetCategoryName={SetCategoryName} SetCategories={SetCategories} categories={categories} categoryName={categoryName} />
-      <h2>{categoryName ? categoryName : 'All'} reviews</h2>
+      <Filters SetCategoryName={SetCategoryName} SetCategories={SetCategories} categories={categories} categoryName={categoryName} SetOrderParam={SetOrderParam} SetSortParam={SetSortParam} />
+      <h2>{categoryName ? capitaliseCategoryName(categoryName) : 'All'} reviews</h2>
       <ul className="reviewList">
         {isLoading ? (
           <p className="loading">loading...</p>
