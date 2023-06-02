@@ -5,7 +5,7 @@ import { postCommentByReviewId } from "../../../Utils/fetchUtils";
 
 
 
-function PostNewComment({ review_id, SetComments }) {
+function PostNewComment({ review_id, SetComments, SetCurrCommentId, isDisabled, setIsDisabled }) {
     const { user, setUser } = useContext(UserContext);
     const [commentBody, setCommentBody] = useState('')
     const [isError, setIsError] = useState()
@@ -28,12 +28,17 @@ function PostNewComment({ review_id, SetComments }) {
 
         SetComments((currList) => [newComment, ...currList])
         setCommentBody('')
-        postCommentByReviewId(review_id, newComment, setIsError).catch((err) => {
+        postCommentByReviewId(review_id, newComment, setIsError).then((res) => {
+            setIsDisabled(true)
+
+            SetCurrCommentId(res.commentData[0].comment_id)
+
+        }).catch((err) => {
             setCommentBody('')
             setIsError(true)
             SetComments((currList) => {
                 currList.shift();
-
+                setIsDisabled(true)
                 return [...currList]
             })
         })
@@ -60,7 +65,7 @@ function PostNewComment({ review_id, SetComments }) {
                 placeholder="write a comment..."
 
             ></textarea>
-            <button className="commentSubmit">Submit</button>
+            <button disabled={isDisabled} className="commentSubmit">Submit</button>
             {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}
         </form>
     </>
