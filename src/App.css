@@ -217,7 +217,7 @@ a:visited {
 .commentsList{
    max-width: 90vw;
  margin: 0em 5vw 2em 5vw;
-  padding: 1em;
+  padding: 0em 1em 1em 1em ;
 
 
 }
@@ -248,8 +248,18 @@ padding: .5em;
 
 .commentForm{
   max-width: 80vw;
-  margin: 2em 2em 2em 2em;
+  margin: 1em 2em 1em 2em;
   display: flex-box;
   
+}
+.commentSubmit{
+  margin: 0em 1em 1em 1em
+}
+
+#commentBody{
+  min-width: 70%;
+  max-width: 90%;
+  min-height: 5em;
+  margin: 0px 5% 0px 5%;
 }
 }

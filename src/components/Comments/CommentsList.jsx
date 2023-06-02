@@ -22,6 +22,9 @@ function CommentsList({ review_id }) {
   return (
     <>
       <h3>Comments</h3>
+      <section className="addComment">
+        <PostNewComment review_id={review_id} SetComments={SetComments} />
+      </section>
       {comments.length < 1 ? (
         <p>No Comments...</p>
       ) : (
@@ -31,9 +34,6 @@ function CommentsList({ review_id }) {
           })}
         </ul>
       )}
-      <section className="addComment">
-        <PostNewComment review_id={review_id} SetComments={SetComments} />
-      </section>
     </>
   );
 }

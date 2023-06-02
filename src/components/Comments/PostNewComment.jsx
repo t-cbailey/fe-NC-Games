@@ -27,6 +27,7 @@ function PostNewComment({ review_id, SetComments }) {
         }
 
         SetComments((currList) => [newComment, ...currList])
+        setCommentBody('')
         postCommentByReviewId(review_id, newComment, setIsError).catch((err) => {
             setCommentBody('')
             setIsError(true)
@@ -47,7 +48,7 @@ function PostNewComment({ review_id, SetComments }) {
     return <>
         <form className='commentForm' onSubmit={handleSubmit}>
 
-            <input
+            <textarea
 
                 id="commentBody"
                 type="text"
@@ -58,7 +59,7 @@ function PostNewComment({ review_id, SetComments }) {
                 className="commentInputBody"
                 placeholder="write a comment..."
 
-            ></input>
+            ></textarea>
             <button className="commentSubmit">Submit</button>
             {isError ? (<p className="errormsg">something went wrong, refresh the page and try again!</p>) : null}
         </form>
