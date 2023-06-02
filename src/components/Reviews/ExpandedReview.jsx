@@ -29,6 +29,7 @@ function ExpandedReview() {
         />
         <h3>{currReview[0].title}</h3>
         <article>{currReview[0].review_body}</article>
+        <p>Category: {currReview[0].category} </p>
         <p>Reviewed by {currReview[0].owner}</p>
         <ReviewVoteButton currReview={currReview} />
       </section>
