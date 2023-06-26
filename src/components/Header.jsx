@@ -6,16 +6,18 @@ function Header() {
   return (
     <>
       <header>
-        <h1>NC Games</h1>
-        <button className="selectedUser">
-          <img
-            id="headerAvatar"
-            className="headerAvatar"
-            src={user.avatar_url}
-            alt={`${user.username}'s avatar`}
-          />
-          <h2>{user.username}</h2>
-        </button>
+        <h1 id="headerText">NC Games</h1>
+        <div className="userNavIcon">
+          <button className="selectedUser">
+            <img
+              id="headerAvatar"
+              className="headerAvatar"
+              src={user.avatar_url}
+              alt={`${user.username}'s avatar`}
+            />
+          </button>
+          <h2 id="userNavIconText">{user.username}</h2>
+        </div>
       </header>
     </>
   );

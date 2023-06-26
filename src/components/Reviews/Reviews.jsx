@@ -62,7 +62,7 @@ function Reviews() {
   return (
     <>
       <Filters SetCategoryName={SetCategoryName} SetCategories={SetCategories} categories={categories} categoryName={categoryName} SetOrderParam={SetOrderParam} SetSortParam={SetSortParam} />
-      <h2>{categoryName ? capitaliseCategoryName(categoryName) : 'All'} reviews</h2>
+      <h2>{categoryName ? `'${capitaliseCategoryName(categoryName)}'` : 'All'} reviews</h2>
       <ul className="reviewList">
         {isLoading ? (
           <p className="loading">loading...</p>

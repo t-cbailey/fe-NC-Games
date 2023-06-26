@@ -8,7 +8,6 @@ function OrderByDropdown({ SetOrderParam }) {
         <form >
 
             <select onChange={handleChange} id="OrderByDropdown">
-
                 <option value='asc'>ASC</option>
                 <option value='desc'>DESC</option>
             </select>

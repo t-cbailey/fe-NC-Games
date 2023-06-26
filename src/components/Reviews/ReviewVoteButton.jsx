@@ -34,8 +34,8 @@ function ReviewVoteButton({ currReview }) {
 
     return (
         <>
-            <p>Votes {votes}</p>
             <div className="voteButtonContainer">
+                <p>Votes: {votes}</p>
                 <button className="voteButtons" name="upVote" onClick={handleClick} disabled={upDisabled}>
                     👍
                 </button>

@@ -6,23 +6,25 @@ import { UserContext } from "../../../Utils/UserContext";
 function UserPage() {
   const { user, setUser } = useContext(UserContext);
   const [allUsers, setAllUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetchUsers().then(({ users }) => {
       setAllUsers(users);
-
+      setIsLoading(false)
     });
   }, []);
 
   return (
     <>
-      <h2>User page</h2>
-      <p>click on a user to sign in</p>
-      <ul className="userList">
-        {allUsers.map((user) => {
-          return <UserCard key={user.username} user={user} />;
-        })}
-      </ul>
+      <h2 id="userPageTitle">Select a user to sign in</h2>
+      {isLoading ? <p className="loading">loading...</p> :
+        <ul className="userList">
+          {allUsers.map((user) => {
+            return <UserCard key={user.username} user={user} />;
+          })}
+        </ul>
+      }
     </>
   );
 }

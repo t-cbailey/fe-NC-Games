@@ -7,6 +7,7 @@ function SortByDropdown({ SetSortParam }) {
         <form >
 
             <select onChange={handleChange} id="SortByDropdown">
+                <option value="" disabled selected>Sort by...</option>
                 <option value='owner'>author</option>
                 <option value='title'>title</option>
                 <option value='created_at'>date created</option>

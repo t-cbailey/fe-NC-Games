@@ -29,15 +29,15 @@ function UserCard({ user }) {
           className="userCard"
           name={user.username}
         >
+          <section className="userCardText">
+            <li name={user.username}>{user.username}</li>
+          </section>
           <img
             src={user.avatar_url}
             alt={user.username}
             className="userCardImage"
             name={user.username}
           />
-          <section className="userCardText">
-            <li name={user.username}>{user.username}</li>
-          </section>
         </button>
       </section>
     </>

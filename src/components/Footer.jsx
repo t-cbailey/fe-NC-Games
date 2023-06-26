@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <p>footer</p>
+      <footer>Tim Bailey 2023</footer>
     </>
   );
 }
