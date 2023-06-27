@@ -1,0 +1,40 @@
+/* FILTERS */
+
+#categoryDropdown,
+#OrderByDropdown,
+#SortByDropdown {
+  background-color: #e7fff8;
+  font-size: 3.5vw;
+  margin: 0.4em;
+  border-radius: 5px;
+}
+
+.filtersContainer {
+  max-width: 90vw;
+  margin: 1em 5vw 1em 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* DESKTOP FORMATTING */
+@media only screen and (min-width: 768px) {
+  /* FILTERS */
+
+  #categoryDropdown,
+  #OrderByDropdown,
+  #SortByDropdown {
+    background-color: #e7fff8;
+    font-size: 1vw;
+    margin: 0.4em;
+    border-radius: 5px;
+  }
+
+  .filtersContainer {
+    max-width: 90vw;
+    margin: 5vh 5vw 1em 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

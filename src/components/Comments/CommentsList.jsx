@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchCommentsByReviewId } from "../../../Utils/fetchUtils";
 import CommentCard from "./CommentCard";
 import PostNewComment from "../Comments/PostNewComment";
+import '../../../Styling/comments.css'
 
 function CommentsList({ review_id }) {
   const [comments, SetComments] = useState([]);
@@ -24,7 +25,7 @@ function CommentsList({ review_id }) {
 
   return (
     <>
-      <h3>Comments</h3>
+      <h3 id="commentsHeader">Comments</h3>
       <section className="addComment">
         <PostNewComment review_id={review_id} SetComments={SetComments} SetCurrCommentId={SetCurrCommentId} isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
       </section>

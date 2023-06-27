@@ -24,21 +24,23 @@ function ExpandedReview() {
     <p className="loading">Loading...</p>
   ) : (
     <>
-      <section className="expandedReview">
-        <img
-          id="expandedReviewImg"
-          src={currReview[0].review_img_url}
-          alt={currReview[0].title}
-        />
-        <h3>{currReview[0].title}</h3>
-        <article id="expandedReviewDesc">{currReview[0].review_body}</article>
-        <p>Category: {currReview[0].category} </p>
-        <p>Reviewed by {currReview[0].owner}</p>
-        <ReviewVoteButton currReview={currReview} />
-      </section>
-      <section className="commentsSection">
-        <CommentsList review_id={currReview[0].review_id} />
-      </section>
+      <div id="expandedRevFullPg">
+        <section className="expandedReview">
+          <img
+            id="expandedReviewImg"
+            src={currReview[0].review_img_url}
+            alt={currReview[0].title}
+          />
+          <h3>{currReview[0].title}</h3>
+          <article id="expandedReviewDesc">{currReview[0].review_body}</article>
+          <p>Category: {currReview[0].category} </p>
+          <p>Reviewed by {currReview[0].owner}</p>
+          <ReviewVoteButton currReview={currReview} />
+        </section>
+        <section className="commentsSection">
+          <CommentsList review_id={currReview[0].review_id} />
+        </section>
+      </div>
     </>
   );
 }

@@ -1,3 +1,5 @@
+import '../../Styling/home.css'
+
 function Home() {
   return (
     <>

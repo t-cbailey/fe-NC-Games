@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { fetchUsers } from "../../../Utils/fetchUtils";
 import UserCard from "./UserCard";
 import { UserContext } from "../../../Utils/UserContext";
+import '../../../Styling/users.css'
 
 function UserPage() {
   const { user, setUser } = useContext(UserContext);

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../Utils/UserContext";
+import '../../Styling/home.css'
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
