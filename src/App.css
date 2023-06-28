@@ -21,7 +21,9 @@
 .errormsg {
   color: rgb(232, 100, 100);
 }
-
+.welcomeSplash:hover {
+  cursor: pointer;
+}
 /* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
   :root {

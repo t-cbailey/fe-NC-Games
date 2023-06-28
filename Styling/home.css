@@ -43,6 +43,7 @@ nav {
 }
 .welcomeSubText {
   font-size: 5vw;
+  margin: 2vh;
 }
 a:link {
   color: rgb(0, 0, 0);
