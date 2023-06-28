@@ -69,6 +69,7 @@
     top: 0;
     left: 0;
     height: 80vh;
+    overflow-y: scroll;
   }
 
   /* Adjust the second column to fill the remaining space */
@@ -99,19 +100,20 @@
   }
 
   #expandedReviewImg {
-    max-height: 40%;
+    max-height: 50%;
+    max-width: 100%;
     border-radius: 20px 20px 20px 20px;
     margin: 5vh 0em 2em 0em;
   }
 
   #expandedReviewDesc {
-    max-height: 30%;
-    max-width: 40%;
+    max-height: 40%;
+    max-width: 60%;
     margin: 2vh auto;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
   }
   .expandedRevSubText {
-    font-size: 1vh;
+    font-size: 1.8vh;
   }
 
   .voteButtonContainer {
