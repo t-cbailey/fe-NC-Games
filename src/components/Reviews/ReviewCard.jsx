@@ -25,7 +25,7 @@ function ReviewCard({ review }) {
       >
         <img
           src={review.review_img_url}
-          alt={review.name}
+          alt={review.title}
           className="reviewCardImage"
           name={review.review_id}
         />

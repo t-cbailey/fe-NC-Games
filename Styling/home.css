@@ -60,7 +60,9 @@ footer {
   font-size: 0.5rem;
   margin-bottom: 10px;
 }
-
+.userNavIcon {
+  cursor: pointer;
+}
 @media only screen and (min-width: 768px) {
   /* HEADER AND NAV */
 
@@ -81,6 +83,7 @@ footer {
     width: auto;
     object-fit: contain;
     margin: 0 auto;
+    cursor: pointer;
   }
   .selectedUser {
     height: 3.75vw;
@@ -109,7 +112,7 @@ footer {
     width: 100vw;
   }
 
-  #navButton {
+  .navButton {
     margin: 0 3vw 0 3vw;
   }
 
@@ -122,5 +125,6 @@ footer {
   }
   .userNavIcon {
     margin: 1vw 2vw 1vw 1vw;
+    cursor: pointer;
   }
 }
