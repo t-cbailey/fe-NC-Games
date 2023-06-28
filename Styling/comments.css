@@ -19,13 +19,13 @@
   border-radius: 20px;
   padding: 0px;
   box-shadow: 3px 3px #7994df;
-  cursor: pointer;
 }
 .commentCardText {
   padding: 0.5em;
 }
 .commentsSection {
   background-color: #79c7df;
+  margin-top: 1vh;
 }
 .commentForm {
   max-width: 80vw;
@@ -51,22 +51,7 @@
   #commentsHeader {
     padding: 2em 1em 1em 1em;
   }
-  .commentCard {
-    margin: 1em 1em 1em 1em;
-    list-style: none;
-    border-color: #7994df;
-    font-size: 0.8em;
-    max-width: 100%;
-    background-color: #c0cdf0;
-    color: rgb(0, 0, 0);
-    border-radius: 20px;
-    padding: 0px;
-    box-shadow: 3px 3px #7994df;
-    cursor: pointer;
-  }
-  .commentCardText {
-    padding: 0.5em;
-  }
+
   .commentsSection {
     background-color: #e9f1f4;
     grid-column: 2;
@@ -74,13 +59,5 @@
   .commentForm {
     max-width: 80vw;
     margin: 1em 2vw 2em 2vw;
-  }
-  .commentSubmit {
-    margin: 1em 1em 1em 1em;
-  }
-  #commentBody {
-    width: 90%;
-    min-height: 5em;
-    margin: 0px 5% 0px 5%;
   }
 }

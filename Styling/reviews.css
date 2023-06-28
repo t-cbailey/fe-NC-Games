@@ -89,7 +89,7 @@
   }
 
   .expandedReview {
-    max-height: 80vh;
+    max-height: 100vh;
     overflow: hidden;
     grid-column: 1;
   }
