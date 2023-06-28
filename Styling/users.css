@@ -39,4 +39,32 @@
 
 /* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
+  #userPageTitle {
+    font-size: 2vw;
+    margin: 8vh auto 4vh auto;
+  }
+  .userCard {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    height: 20%;
+    margin: 1vh auto;
+    list-style: none;
+    border-color: #7994df;
+    font-size: 0.8em;
+    background-color: #c0cdf0;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 0px;
+    box-shadow: 3px 3px #7994df;
+    cursor: pointer;
+  }
+  .userList {
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+  }
 }
