@@ -57,13 +57,14 @@
 /* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
   /* REVIEWS */
+  #allReviewsHeader {
+    font-size: 2vw;
+  }
   #expandedRevFullPg {
     display: grid;
     grid-template-columns: 70vw 30vw;
     position: fixed;
   }
-
-  /* Make the first column fixed */
   #expandedRevFullPg > :first-child {
     position: sticky;
     top: 0;
@@ -71,8 +72,6 @@
     height: 80vh;
     overflow-y: scroll;
   }
-
-  /* Adjust the second column to fill the remaining space */
   #expandedRevFullPg > :last-child {
     overflow-y: scroll;
     height: 100vh;
