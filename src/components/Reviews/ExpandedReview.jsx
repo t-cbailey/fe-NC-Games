@@ -31,10 +31,10 @@ function ExpandedReview() {
             src={currReview[0].review_img_url}
             alt={currReview[0].title}
           />
-          <h3>{currReview[0].title}</h3>
+          <h3 id="expandedReviewTitle">{currReview[0].title}</h3>
           <article id="expandedReviewDesc">{currReview[0].review_body}</article>
-          <p>Category: {currReview[0].category} </p>
-          <p>Reviewed by {currReview[0].owner}</p>
+          <p className="expandedRevSubText">Category: {currReview[0].category} </p>
+          <p className="expandedRevSubText">Reviewed by {currReview[0].owner}</p>
           <ReviewVoteButton currReview={currReview} />
         </section>
         <section className="commentsSection">

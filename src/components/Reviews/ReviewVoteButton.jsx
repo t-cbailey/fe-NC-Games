@@ -35,7 +35,7 @@ function ReviewVoteButton({ currReview }) {
     return (
         <>
             <div className="voteButtonContainer">
-                <p>Votes: {votes}</p>
+                <p className="expandedRevSubText">Votes: {votes}</p>
                 <button className="voteButtons" name="upVote" onClick={handleClick} disabled={upDisabled}>
                     👍
                 </button>

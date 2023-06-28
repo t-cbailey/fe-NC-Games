@@ -40,23 +40,13 @@
   margin: 0px 5% 0px 5%;
 }
 
-.voteButtonContainer {
-  margin: 1em 0em 3em 0em;
-}
-.voteButtons {
-  width: 15vw;
-  background-color: white;
-  margin: 2%;
-  border-color: rgb(207, 207, 207);
-}
-
 /* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
   /* COMMENTS */
 
   .commentsList {
     margin: 0em 2vw 2em 2vw;
-    padding: 0em 1em 1em 1em;
+    padding: 0em 1em 20vh 1em;
   }
   #commentsHeader {
     padding: 2em 1em 1em 1em;
@@ -80,7 +70,6 @@
   .commentsSection {
     background-color: #e9f1f4;
     grid-column: 2;
-    min-height: 100vh;
   }
   .commentForm {
     max-width: 80vw;
@@ -93,15 +82,5 @@
     width: 90%;
     min-height: 5em;
     margin: 0px 5% 0px 5%;
-  }
-
-  .voteButtonContainer {
-    margin: 1em 0em 3em 0em;
-  }
-  .voteButtons {
-    width: 8vw;
-    background-color: white;
-    margin: 2%;
-    border-color: rgb(207, 207, 207);
   }
 }

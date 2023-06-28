@@ -9,14 +9,14 @@ import Home from "./components/Home";
 import Reviews from "./components/Reviews/Reviews";
 import UserPage from "./components/Users/UserPage";
 import ExpandedReview from "./components/Reviews/ExpandedReview";
+import imgUrl from '../public/assets/guestIcon.png'
 
 import { UserContext } from "../Utils/UserContext";
 
 function App() {
   const [user, setUser] = useState({
     username: "guest",
-    avatar_url:
-      "../assets/guestIcon.png",
+    avatar_url: imgUrl,
   });
 
   return (

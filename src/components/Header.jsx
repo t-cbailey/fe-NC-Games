@@ -4,6 +4,7 @@ import '../../Styling/home.css'
 import { useNavigate } from "react-router-dom";
 
 
+
 function Header() {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate()

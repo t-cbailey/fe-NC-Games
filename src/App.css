@@ -25,6 +25,6 @@
 /* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
   :root {
-    margin-top: 14vh;
+    margin-top: 10vw;
   }
 }

@@ -44,11 +44,37 @@
   margin: 1em;
 }
 
+.voteButtonContainer {
+  margin: 1em 0em 3em 0em;
+}
+.voteButtons {
+  width: 15vw;
+  background-color: white;
+  margin: 2%;
+  border-color: rgb(207, 207, 207);
+}
+
 /* DESKTOP FORMATTING */
 @media only screen and (min-width: 768px) {
   /* REVIEWS */
-  #allReviewsHeader {
-    font-size: 2vw;
+  #expandedRevFullPg {
+    display: grid;
+    grid-template-columns: 70vw 30vw;
+    position: fixed;
+  }
+
+  /* Make the first column fixed */
+  #expandedRevFullPg > :first-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 80vh;
+  }
+
+  /* Adjust the second column to fill the remaining space */
+  #expandedRevFullPg > :last-child {
+    overflow-y: scroll;
+    height: 100vh;
   }
 
   .reviewList {
@@ -63,24 +89,39 @@
   }
 
   .expandedReview {
-    max-width: 70vw;
-    margin: 3vh 0vw 0 0vw;
-    position: fixed;
+    max-height: 80vh;
+    overflow: hidden;
+    grid-column: 1;
+  }
+
+  #expandedReviewTitle {
+    font-size: 2vh;
   }
 
   #expandedReviewImg {
-    max-width: 100%;
+    max-height: 40%;
     border-radius: 20px 20px 20px 20px;
     margin: 5vh 0em 2em 0em;
   }
 
   #expandedReviewDesc {
-    max-width: 70%;
+    max-height: 30%;
+    max-width: 40%;
     margin: 2vh auto;
+    font-size: 1.5vh;
+  }
+  .expandedRevSubText {
+    font-size: 1vh;
   }
 
-  #expandedRevFullPg {
-    display: grid;
-    grid-template-columns: 70vw 30vw;
+  .voteButtonContainer {
+    margin: 1em 0em 3em 0em;
+  }
+  .voteButtons {
+    width: 8vh;
+    height: 4vh;
+    background-color: white;
+    margin: 2%;
+    border-color: rgb(207, 207, 207);
   }
 }
